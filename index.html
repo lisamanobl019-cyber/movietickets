@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KINOTIME — Билеты в кино</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="#">KINO<span>TIME</span></a>
+  <span class="city">📍 Ош, Кыргызстан</span>
+</header>
+
+<section class="hero">
+  <p class="eyebrow">ТВОЙ МИР КИНО</p>
+  <h1>Выбирай фильм.<br><span>Покупай билет.</span></h1>
+  <p>Твои любимые фильмы в одном месте.</p>
+  <a class="btn" href="#movies">Смотреть фильмы →</a>
+</section>
+
+<main class="container" id="movies">
+  <h2>Популярные фильмы</h2>
+  <p class="muted">Выбирай, что посмотреть сегодня</p>
+
+  <input id="search" type="search" placeholder="🔎 Поиск фильма...">
+
+  <div class="filters">
+    <button class="filter active" data-genre="Все">Все</button>
+    <button class="filter" data-genre="Драма">Драма</button>
+    <button class="filter" data-genre="Триллер">Триллер</button>
+    <button class="filter" data-genre="Комедия">Комедия</button>
+    <button class="filter" data-genre="Сериал">Сериалы</button>
+  </div>
+
+  <div id="movieList" class="movie-grid"></div>
+  <p id="emptyMessage" class="muted hidden">Фильмы не найдены.</p>
+</main>
+
+<section class="container booking" id="booking">
+  <h2>🎟 Бронирование билета</h2>
+  <p class="muted" id="selectedMovie">Сначала выбери фильм в каталоге.</p>
+
+  <label for="cinema">Кинотеатр</label>
+  <select id="cinema">
+    <option>Кинотеатр Ош</option>
+    <option>Кинотеатр Кыргызстан</option>
+    <option>Кинотеатр Ала-Тоо</option>
+  </select>
+
+  <label for="session">Время сеанса</label>
+  <select id="session">
+    <option>12:00</option>
+    <option>15:00</option>
+    <option>18:00</option>
+    <option>21:00</option>
+  </select>
+
+  <div class="screen">ЭКРАН</div>
+  <div id="seats" class="seats"></div>
+
+  <div class="legend">
+    <span>🟪 Свободно</span>
+    <span>🟣 Выбрано</span>
+    <span>⬛ Занято</span>
+  </div>
+
+  <div class="total">
+    <span>Мест: <b id="seatCount">0</b></span>
+    <span>Цена: <b id="totalPrice">0</b> сом</span>
+  </div>
+
+  <button id="buyButton" class="btn full">Получить билет</button>
+  <div id="ticket" class="ticket hidden"></div>
+  <p class="small">Учебный проект. Реальная оплата не подключена.</p>
+</section>
+
+<footer>
+  <a class="logo" href="#">KINO<span>TIME</span></a>
+  <p>© 2026 KINOTIME</p>
+</footer>
+
+<dialog id="movieDialog">
+  <button id="closeDialog" class="close">✕</button>
+  <div id="movieDetails"></div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>

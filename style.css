@@ -1,0 +1,422 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0c0b18;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 7%;
+  background: #151326;
+  border-bottom: 1px solid #302744;
+}
+
+.logo {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo span,
+.hero h1 span {
+  color: #b49aff;
+}
+
+.city {
+  color: #c8c2dc;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 75px 8%;
+  background:
+    radial-gradient(ellipse at 85% 20%, #49316d, transparent 48%),
+    linear-gradient(135deg, #1b1731, #0c0b18);
+}
+
+.eyebrow {
+  color: #c4b5fd;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero p:not(.eyebrow) {
+  color: #c8c2dc;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: #895cf6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background: #a78bfa;
+  transform: translateY(-2px);
+}
+
+.container {
+  width: 86%;
+  max-width: 1200px;
+  margin: 55px auto;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.muted {
+  color: #aaa4c1;
+  margin-bottom: 22px;
+}
+
+#search,
+select {
+  width: 100%;
+  padding: 15px;
+  color: white;
+  background: #19172b;
+  border: 1px solid #39334f;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filter {
+  padding: 10px 17px;
+  color: white;
+  background: #19172b;
+  border: 1px solid #39334f;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.filter:hover,
+.filter.active {
+  background: #895cf6;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.movie-card {
+  overflow: hidden;
+  background: #171529;
+  border: 1px solid #302744;
+  border-radius: 15px;
+  transition: 0.25s;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  border-color: #895cf6;
+}
+
+.movie-poster {
+  display: block;
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  background: #29213e;
+}
+
+.movie-info {
+  padding: 18px;
+}
+
+.movie-info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.movie-meta {
+  color: #b9b2ce;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.movie-description {
+  color: #d2cde0;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.details-btn,
+.book-btn {
+  flex: 1;
+  padding: 11px 8px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.details-btn {
+  background: #302a48;
+}
+
+.book-btn {
+  background: #895cf6;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.booking {
+  padding: 30px;
+  background: #171529;
+  border: 1px solid #302744;
+  border-radius: 18px;
+}
+
+.booking label {
+  display: block;
+  margin: 15px 0 8px;
+  color: #d2cde0;
+}
+
+.screen {
+  width: 80%;
+  margin: 30px auto;
+  padding: 12px;
+  text-align: center;
+  color: #d8ccff;
+  border-top: 4px solid #a78bfa;
+  border-radius: 50% 50% 0 0;
+  background: #24203a;
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 500px;
+  margin: 25px auto;
+}
+
+.seat {
+  padding: 10px 0;
+  color: white;
+  background: #6544a8;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.seat.selected {
+  background: #c4b5fd;
+  color: #17102b;
+}
+
+.seat.occupied {
+  background: #343244;
+  color: #777386;
+  cursor: not-allowed;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  color: #c7c4d8;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.total b {
+  color: #c4b5fd;
+}
+
+.full {
+  width: 100%;
+}
+
+.ticket {
+  margin-top: 25px;
+  padding: 22px;
+  line-height: 1.9;
+  background: #24203a;
+  border: 1px dashed #a78bfa;
+  border-radius: 12px;
+}
+
+.ticket h3 {
+  color: #c4b5fd;
+  margin-bottom: 10px;
+}
+
+.small {
+  color: #aaa4c1;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+footer {
+  padding: 30px;
+  text-align: center;
+  background: #151326;
+  color: #aaa4c1;
+}
+
+footer p {
+  margin-top: 10px;
+}
+
+dialog {
+  width: 90%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: auto;
+  padding: 25px;
+  background: #171529;
+  color: white;
+  border: 1px solid #50436f;
+  border-radius: 16px;
+}
+
+dialog::backdrop {
+  background: #000c;
+}
+
+.close {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  background: #302a48;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.detail-poster {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#movieDetails p {
+  color: #d2cde0;
+  line-height: 1.7;
+  margin: 14px 0;
+}
+
+.external-link {
+  display: inline-block;
+  color: #c4b5fd;
+  margin: 10px 0 20px;
+}
+
+@media (max-width: 800px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .movie-poster {
+    height: 280px;
+  }
+}
+
+@media (max-width: 520px) {
+  .header {
+    padding: 18px 5%;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .city {
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 55px 6%;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-poster {
+    height: 380px;
+  }
+
+  .booking {
+    padding: 18px;
+  }
+
+  .seats {
+    gap: 5px;
+  }
+
+  .seat {
+    padding: 9px 0;
+    font-size: 12px;
+  }
+}
